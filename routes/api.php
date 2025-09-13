@@ -14,7 +14,7 @@ use App\Http\Controllers\Api\AuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('/login', [AuthController::class, 'login']); // token login
+Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:api'); // token login
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/blogs', [BlogApiController::class, 'index']);

@@ -22,7 +22,7 @@
     </div>
 
     <!-- User Table -->
-    <div class="table-responsive" style="background-color: #f4f6f8; min-height: 100vh; padding: 40px 20px;">
+    <div class="table-responsive" style="background-color: #f4f6f8; min-height: 50vh; padding: 40px 20px;">
         <table class="table table-hover table-bordered align-middle">
             <thead class="table-dark">
                 <tr>

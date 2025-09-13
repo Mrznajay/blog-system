@@ -15,6 +15,8 @@ A simple **Blog Management System** built with Laravel, featuring an **admin das
 - Pagination, view details, validations  
 
 **API**
+- `POST /api/login` → for login  
+- `POST /api/logout` → for logout 
 - `GET /api/blogs` → all blogs  
 - `GET /api/blog/{id}` → blog details  
 - **Authentication:** Laravel Sanctum (token-based)
@@ -41,3 +43,4 @@ php artisan key:generate
 php artisan migrate --seed
 php artisan storage:link
 php artisan serve
+

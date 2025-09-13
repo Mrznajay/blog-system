@@ -29,7 +29,7 @@ class UserController extends Controller
     public function index()
     {
         try {
-            $users = User::latest()->paginate(15);
+            $users = User::latest()->paginate(5);
             return view('admin.users.index', compact('users'));
         } catch (\Throwable $e) {
             Log::error('Failed to load user list', ['error' => $e->getMessage()]);
