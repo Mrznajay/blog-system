@@ -17,7 +17,19 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public static function home()
+    {
+        $user = auth()->user();
+
+        if ($user) {
+            return $user->is_admin 
+                ? route('admin.users.index')  // Admin dashboard
+                : route('blogs.details'); // Normal user profile
+        }
+
+        return '/login';
+    }
+
 
     /**
      * The controller namespace for the application.

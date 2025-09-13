@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\BlogApiController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,10 @@ use App\Http\Controllers\Api\BlogApiController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/login', [AuthController::class, 'login']); // token login
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/blogs', [BlogApiController::class, 'index']);
     Route::get('/blog/{id}', [BlogApiController::class, 'show']);
+    Route::post('/logout', [AuthController::class, 'logout']); // optional logout
 });
