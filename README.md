@@ -42,7 +42,6 @@ cp .env.example .env
 php artisan config:cache
 php artisan key:generate
 php artisan migrate
-php artisan migrate --seed
 php artisan db:seed --class=AdminUserTableSeeder
 php artisan storage:link
 php artisan serve
